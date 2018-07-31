@@ -93,12 +93,12 @@ var game = {
     checkRound: function () {
         if (this.numGuesses === 0) {
             console.log("\nYou've run out of guesses! The word was " + this.currentWord.word + ".");
-            console.log("You've solved " + this.wins + " words so far.\n");
+            console.log("You've solved " + this.wins + " word(s) so far.\n");
             this.promptNextRound();
         } else if (this.currentWord.toString().indexOf("_") === -1) {
             this.wins++;
             console.log("\nYou've solved it! The word was " + this.currentWord.word + ".");
-            console.log("You've solved " + this.wins + " words so far.\n");
+            console.log("You've solved " + this.wins + " word(s) so far.\n");
             this.promptNextRound();
         } else {
             this.playTurn();
@@ -118,7 +118,7 @@ var game = {
                 console.log("\nNext round!\n");
                 this.pickNewWord();
             } else {
-                console.log("\nYou solved " + this.wins + " words this time.\n");
+                console.log("\nYou solved " + this.wins + " word(s) this time.\n");
                 console.log("Thanks for playing!\n");
                 return;
             }
