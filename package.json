@@ -1,0 +1,23 @@
+{
+  "name": "word-guess-game-two",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Letter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steinbrennergit/word-guess-game-two.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steinbrennergit/word-guess-game-two/issues"
+  },
+  "homepage": "https://github.com/steinbrennergit/word-guess-game-two#readme",
+  "dependencies": {
+    "inquirer": "^6.0.0"
+  }
+}
