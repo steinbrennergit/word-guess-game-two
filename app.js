@@ -32,8 +32,13 @@ var game = {
     currentWord: null,
     guesses: null,
     numGuesses: null,
+    wins: 0,
 
     init: function () {
+        console.log("\n####################");
+        console.log("\nWelcome to the word guessing game!\n\nThe theme is:\nPROGRAMMING LANGUAGES");
+        console.log("\nYou will be able to guess one letter per turn.");
+        console.log("\nGuess the word before you've made 9 incorrect guesses to win!");
         this.localWordList = [];
         globalWordList.forEach(function (item) {
             game.localWordList.push(item);
@@ -87,10 +92,13 @@ var game = {
 
     checkRound: function () {
         if (this.numGuesses === 0) {
-            console.log("\nYou've run out of guesses! The word was " + this.currentWord.word + ".\n");
+            console.log("\nYou've run out of guesses! The word was " + this.currentWord.word + ".");
+            console.log("You've solved " + this.wins + " words so far.\n");
             this.promptNextRound();
         } else if (this.currentWord.toString().indexOf("_") === -1) {
-            console.log("\nYou've solved it! The word was " + this.currentWord.word + ".\n");
+            this.wins++;
+            console.log("\nYou've solved it! The word was " + this.currentWord.word + ".");
+            console.log("You've solved " + this.wins + " words so far.\n");
             this.promptNextRound();
         } else {
             this.playTurn();
@@ -110,20 +118,21 @@ var game = {
                 console.log("\nNext round!\n");
                 this.pickNewWord();
             } else {
-                console.log("\nThanks for playing!\n");
+                console.log("\nYou solved " + this.wins + " words this time.\n");
+                console.log("Thanks for playing!\n");
                 return;
             }
         });
     },
 
     display: function () {
-        console.log("\n----------\n");
+        console.log("\n####################\n");
         console.log("Your word:\n");
         console.log(this.currentWord.toString());
-        console.log("\n\nYour guesses:");
-        console.log(this.guesses.join(" ") + "\n");
+        console.log("\n\nYour guesses:\n");
+        console.log(this.guesses.join(" "));
         console.log("\n\nGuesses remaining: " + this.numGuesses);
-        console.log("\n----------\n");
+        console.log("\n####################\n");
     }
 };
 
