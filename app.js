@@ -66,7 +66,6 @@ var game = {
     playTurn: function () {
         // Update display
         // Take input prompt
-        // If guesses remaining, recursive call
         this.display();
 
         inq.prompt([{
@@ -130,7 +129,7 @@ var game = {
         console.log("Your word:\n");
         console.log(this.currentWord.toString());
         console.log("\n\nYour guesses:\n");
-        console.log(this.guesses.join(" "));
+        console.log(this.guesses.sort().join(" "));
         console.log("\n\nGuesses remaining: " + this.numGuesses);
         console.log("\n####################\n");
     }
