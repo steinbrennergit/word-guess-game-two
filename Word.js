@@ -1,7 +1,7 @@
 const Letter = require("./Letter.js");
 
 var Word = function (str) {
-    this.word = str.toLowerCase();
+    this.word = str.toUpperCase();
     this.letters = [];
     this.display = [];
     this.word.split("").forEach((char) => {
@@ -24,6 +24,9 @@ Word.prototype.updateDisplay = function () {
         this.display.push(letter.toString());
     });
 };
+Word.prototype.toString = function () {
+    return this.display.join(" ");
+}
 
 module.exports = Word;
 
@@ -36,4 +39,5 @@ console.log("false: " + w.guess('a'));
 console.log("display: " + w.display);
 console.log("true: " + w.guess('u'));
 console.log("display: " + w.display);
+console.log(w.toString());
 */

@@ -1,17 +1,16 @@
 var Letter = function (val) {
-    this.char = val.toLowerCase();
+    this.char = val.toUpperCase();
     this.guessed = false;
-    this.index = i;
 };
 Letter.prototype.toString = function () {
     if (this.guessed) {
-        return this.char.toUpperCase();
+        return this.char;
     } else {
         return "_";
     }
 };
 Letter.prototype.check = function (guess) {
-    if (this.char === guess.toLowerCase()) {
+    if (this.char === guess.toUpperCase()) {
         this.guessed = true;
         return true;
     } else {
